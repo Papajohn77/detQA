@@ -18,6 +18,34 @@
         formControlName="title"
         required
       />
+
+      <span
+        class="error-message"
+        *ngIf="
+          (askQuestionFormControl.title.touched || submitted) &&
+          askQuestionFormControl.title.errors?.required
+        "
+      >
+        The title is required...
+      </span>
+      <span
+        class="error-message"
+        *ngIf="
+          (askQuestionFormControl.title.touched || submitted) &&
+          askQuestionFormControl.title.errors?.minlength
+        "
+      >
+        The title must be at least 15 characters long...
+      </span>
+      <span
+        class="error-message"
+        *ngIf="
+          (askQuestionFormControl.title.touched || submitted) &&
+          askQuestionFormControl.title.errors?.maxlength
+        "
+      >
+        The title must not exceed 100 characters...
+      </span>
     </div>
 
     <div class="form-group">
@@ -31,6 +59,25 @@
         formControlName="body"
         required
       ></textarea>
+
+      <span
+        class="error-message"
+        *ngIf="
+          (askQuestionFormControl.body.touched || submitted) &&
+          askQuestionFormControl.body.errors?.required
+        "
+      >
+        The body is required...
+      </span>
+      <span
+        class="error-message"
+        *ngIf="
+          (askQuestionFormControl.body.touched || submitted) &&
+          askQuestionFormControl.body.errors?.minlength
+        "
+      >
+        The body must be at least 30 characters long...
+      </span>
     </div>
 
     <div class="form-group">
@@ -43,6 +90,16 @@
           {{ category.name }}
         </option>
       </select>
+
+      <span
+        class="error-message"
+        *ngIf="
+          (askQuestionFormControl.category.touched || submitted) &&
+          askQuestionFormControl.category.errors?.required
+        "
+      >
+        The category is required...
+      </span>
     </div>
 
     <div class="submit-question_btn">

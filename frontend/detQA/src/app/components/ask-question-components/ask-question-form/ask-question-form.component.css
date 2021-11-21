@@ -109,6 +109,12 @@ option {
   margin-bottom: 1rem;
 }
 
+.error-message {
+  font-size: 15px;
+  padding-left: 12px;
+  color: #dc3545;
+}
+
 /* ---------------- Media Queries ---------------- */
 
 /* Applies when the screen width is below 600px */
