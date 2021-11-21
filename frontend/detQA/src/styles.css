@@ -1,0 +1,38 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: cursive;
+  line-height: 1.8;
+
+  background-color: rgb(253, 244, 230);
+
+  --color-red: rgb(117, 33, 35);
+  --color-gray: rgb(180, 180, 180);
+  --color-white: rgb(255, 255, 255);
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+  color: var(--color-white);
+}
+
+::selection {
+  color: var(--color-white);
+  background-color: var(--color-red);
+}
+
+/* ---------------- Media Queries ---------------- */
+
+/* Applies when the screen width is below 600px */
+@media screen and (max-width: 600px) {
+  body {
+    font-family: sans-serif;
+  }
+}

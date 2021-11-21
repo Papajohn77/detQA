@@ -1,0 +1,18 @@
+#questions-page-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 1rem 4rem;
+
+  border-bottom: 1px solid var(--color-red);
+}
+
+/* ---------------- Media Queries ---------------- */
+
+/* Applies when the screen width is below 600px */
+@media screen and (max-width: 600px) {
+  #questions-page-heading {
+    padding: 1rem 1rem;
+  }
+}

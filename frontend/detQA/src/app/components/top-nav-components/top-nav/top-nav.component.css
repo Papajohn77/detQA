@@ -1,0 +1,62 @@
+#top-nav {
+  z-index: 1;
+  position: sticky;
+  top: 0;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+
+  background-color: var(--color-red);
+}
+
+.left-side,
+.right-side {
+  display: flex;
+}
+
+.right-side a {
+  position: relative;
+
+  margin: 0 10px;
+  padding: 0 3px;
+  color: rgb(210, 220, 230);
+}
+
+.right-side a::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
+
+  width: 100%;
+  height: 0.15rem;
+
+  background-color: rgb(210, 220, 230);
+
+  transform: scaleX(0);
+  transition: transform 350ms cubic-bezier(1, 0, 0, 1);
+}
+
+.right-side a::after {
+  bottom: 0;
+}
+
+.right-side a:hover::after {
+  transform: scaleX(1);
+}
+
+/* ---------------- Media Queries ---------------- */
+
+/* Applies when the screen width is below 600px */
+@media screen and (max-width: 600px) {
+  .left-side {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .right-side {
+    display: none;
+  }
+}

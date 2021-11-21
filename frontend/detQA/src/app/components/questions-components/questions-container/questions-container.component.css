@@ -1,0 +1,12 @@
+#questions-container {
+  padding: 1rem 2rem;
+}
+
+/* ---------------- Media Queries ---------------- */
+
+/* Applies when the screen width is below 600px */
+@media screen and (max-width: 600px) {
+  #questions-container {
+    padding: 1rem 1rem;
+  }
+}

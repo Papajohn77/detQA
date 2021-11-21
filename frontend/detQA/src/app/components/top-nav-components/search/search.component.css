@@ -1,0 +1,36 @@
+.search-form {
+  display: flex;
+}
+
+#search-field {
+  height: 2.5rem;
+  width: 50vw;
+  min-width: 12rem;
+  max-width: 35rem;
+  padding-left: 10px;
+  padding-right: 5px;
+
+  border-radius: 0.25rem;
+
+  margin-left: 1.5rem;
+}
+
+#search-field:focus {
+  outline: none;
+}
+
+#search-btn {
+  height: 2.5rem;
+  margin-left: 0.5rem;
+
+  color: var(--color-white);
+}
+
+/* ---------------- Media Queries ---------------- */
+
+/* Applies when the screen width is below 600px */
+@media screen and (max-width: 600px) {
+  #search-field {
+    margin-left: 10px;
+  }
+}
