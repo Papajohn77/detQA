@@ -1,0 +1,21 @@
+.info-message {
+  text-align: center;
+  font-size: 22px;
+
+  margin-top: 2rem;
+}
+
+.available-pages {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.available-pages a {
+  color: black;
+  text-decoration: underline;
+}
+
+.available-pages a:hover {
+  color: rgba(0, 0, 0, 0.7);
+}

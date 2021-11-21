@@ -19,6 +19,7 @@ import { QuestionComponent } from './components/questions-components/question/qu
 import { MainAskQuestionComponent } from './components/ask-question-components/main-ask-question/main-ask-question.component';
 import { AskQuestionHeadingComponent } from './components/ask-question-components/ask-question-heading/ask-question-heading.component';
 import { AskQuestionFormComponent } from './components/ask-question-components/ask-question-form/ask-question-form.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { AskQuestionFormComponent } from './components/ask-question-components/a
     MainAskQuestionComponent,
     AskQuestionHeadingComponent,
     AskQuestionFormComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
