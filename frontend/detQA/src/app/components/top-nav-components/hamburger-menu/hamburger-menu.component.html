@@ -1,10 +1,10 @@
 <div class="hamburger-menu">
-  <div class="hamburger-menu_btn">
-    <div class="line line-1"></div>
-    <div class="line line-2"></div>
-    <div class="line line-3"></div>
+  <div class="hamburger-menu_btn" (click)="onClick()">
+    <div class="line line-1" [class.animate-line-1]="isAnimated"></div>
+    <div class="line line-2" [class.animate-line-2]="isAnimated"></div>
+    <div class="line line-3" [class.animate-line-3]="isAnimated"></div>
   </div>
-  <nav class="hamburger-menu_content">
+  <nav class="hamburger-menu_content" [class.clicked]="isClicked">
     <a href="questions">Questions</a>
     <a href="#">Ask Question</a>
     <a href="#">About us</a>
