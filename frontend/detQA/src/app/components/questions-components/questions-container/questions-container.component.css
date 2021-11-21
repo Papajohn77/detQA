@@ -2,6 +2,11 @@
   padding: 1rem 2rem;
 }
 
+.info-message {
+  text-align: center;
+  font-size: 18px;
+}
+
 /* ---------------- Media Queries ---------------- */
 
 /* Applies when the screen width is below 600px */

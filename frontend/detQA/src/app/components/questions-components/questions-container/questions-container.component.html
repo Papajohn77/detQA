@@ -1,3 +1,12 @@
 <section id="questions-container">
-  <app-question></app-question>
+  <div
+    class="info-message"
+    *ngIf="questions === undefined || questions.length === 0"
+  >
+    No questions found!
+  </div>
+  <app-question
+    *ngFor="let question of questions"
+    [question]="question"
+  ></app-question>
 </section>
