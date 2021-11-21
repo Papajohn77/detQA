@@ -3,13 +3,12 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-questions-heading',
   templateUrl: './questions-heading.component.html',
-  styleUrls: ['./questions-heading.component.css']
+  styleUrls: ['./questions-heading.component.css'],
 })
 export class QuestionsHeadingComponent implements OnInit {
+  title = 'Questions';
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }
