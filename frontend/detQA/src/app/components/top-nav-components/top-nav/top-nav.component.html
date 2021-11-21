@@ -1,7 +1,7 @@
 <header id="top-nav">
   <div class="left-side">
     <app-hamburger-menu></app-hamburger-menu>
-    <app-search></app-search>
+    <app-search *ngIf="isQuestions()"></app-search>
   </div>
 
   <nav class="right-side">

@@ -1,0 +1,5 @@
+#ask-question-heading {
+  padding: 1rem;
+  text-align: center;
+  border-bottom: 1px solid var(--color-red);
+}
