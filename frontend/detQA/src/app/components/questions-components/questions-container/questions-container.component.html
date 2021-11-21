@@ -6,7 +6,25 @@
     No questions found!
   </div>
   <app-question
-    *ngFor="let question of questions"
+    *ngFor="
+      let question of questions
+        | paginate
+          : {
+              itemsPerPage: questionsPerPage,
+              currentPage: page
+            }
+    "
     [question]="question"
   ></app-question>
 </section>
+
+<app-questions-pagination>
+  <pagination-controls
+    class="pagination-controls"
+    previousLabel="Prev"
+    nextLabel="Next"
+    (pageChange)="pageChange($event)"
+    *ngIf="questions !== undefined && questions.length !== 0"
+  >
+  </pagination-controls>
+</app-questions-pagination>

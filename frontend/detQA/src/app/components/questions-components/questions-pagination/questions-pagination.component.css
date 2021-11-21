@@ -5,18 +5,10 @@
 
   height: 60px;
   width: 100%;
-  background-color: var(--color-red);
 }
 
 #button_container {
   display: flex;
-  justify-content: space-between;
-}
-
-#button_container a {
-  margin: 10px 15px;
-}
-
-#button_container a:hover {
-  color: var(--color-white);
+  justify-content: center;
+  align-items: center;
 }

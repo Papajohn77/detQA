@@ -8,6 +8,9 @@ import { Question } from '../../../models/Question';
   styleUrls: ['./questions-container.component.css'],
 })
 export class QuestionsContainerComponent implements OnInit {
+  page = 1;
+  questionsPerPage = 3;
+
   questions!: Question[];
 
   constructor(private questionsService: QuestionsService) {}
@@ -18,5 +21,9 @@ export class QuestionsContainerComponent implements OnInit {
       .subscribe(
         (receivedQuestions: Question[]) => (this.questions = receivedQuestions)
       );
+  }
+
+  pageChange(event: number) {
+    this.page = event;
   }
 }
