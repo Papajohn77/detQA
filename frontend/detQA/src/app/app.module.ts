@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,7 +15,6 @@ import { QuestionsHeadingComponent } from './components/questions-components/que
 import { QuestionsContainerComponent } from './components/questions-components/questions-container/questions-container.component';
 import { QuestionsPaginationComponent } from './components/questions-components/questions-pagination/questions-pagination.component';
 import { QuestionComponent } from './components/questions-components/question/question.component';
-import { FilterButtonComponent } from './components/questions-components/filter-button/filter-button.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +27,6 @@ import { FilterButtonComponent } from './components/questions-components/filter-
     QuestionsContainerComponent,
     QuestionsPaginationComponent,
     QuestionComponent,
-    FilterButtonComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,6 +34,7 @@ import { FilterButtonComponent } from './components/questions-components/filter-
     HttpClientModule,
     FormsModule,
     NgxPaginationModule,
+    Ng2SearchPipeModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

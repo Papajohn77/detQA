@@ -1,11 +1,10 @@
-<form class="search-form" action="" method="POST">
+<div class="search">
   <input
     id="search-field"
     type="search"
     name="search"
-    placeholder="Search..."
+    placeholder="&#xF002; Search..."
+    [(ngModel)]="searchTerm"
+    (ngModelChange)="setSearchTerm($event)"
   />
-  <button id="search-btn" class="btn btn-warning" type="submit">
-    <i class="fas fa-search"></i>
-  </button>
-</form>
+</div>

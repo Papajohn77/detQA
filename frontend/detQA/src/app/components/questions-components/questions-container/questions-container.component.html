@@ -8,6 +8,7 @@
   <app-question
     *ngFor="
       let question of questions
+        | filter: searchTerm
         | paginate
           : {
               itemsPerPage: questionsPerPage,

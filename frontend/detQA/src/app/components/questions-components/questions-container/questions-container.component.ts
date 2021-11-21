@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { QuestionsService } from '../../../services/questions.service';
+import { SearchService } from '../../../services/search.service';
 import { Question } from '../../../models/Question';
 
 @Component({
@@ -12,8 +13,12 @@ export class QuestionsContainerComponent implements OnInit {
   questionsPerPage = 3;
 
   questions!: Question[];
+  searchTerm!: string;
 
-  constructor(private questionsService: QuestionsService) {}
+  constructor(
+    private questionsService: QuestionsService,
+    private searchService: SearchService
+  ) {}
 
   ngOnInit(): void {
     this.questionsService
@@ -21,6 +26,10 @@ export class QuestionsContainerComponent implements OnInit {
       .subscribe(
         (receivedQuestions: Question[]) => (this.questions = receivedQuestions)
       );
+
+    this.searchService.searchTerm.subscribe((data: string) => {
+      this.searchTerm = data;
+    });
   }
 
   pageChange(event: number) {
