@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { CategoriesService } from '../../../services/categories.service';
+import { QuestionsService } from '../../../services/questions.service';
 import { Category } from '../../../models/Category';
 
 @Component({
@@ -15,7 +16,10 @@ export class AskQuestionFormComponent implements OnInit {
   categories!: Category[];
   askQuestionForm!: FormGroup;
 
-  constructor(private categoriesService: CategoriesService) {}
+  constructor(
+    private categoriesService: CategoriesService,
+    private questionsService: QuestionsService
+  ) {}
 
   ngOnInit(): void {
     this.askQuestionForm = new FormGroup({
@@ -44,7 +48,7 @@ export class AskQuestionFormComponent implements OnInit {
     this.successMessage = '';
 
     if (this.askQuestionForm.valid) {
-      console.log(this.askQuestionForm.value);
+      this.questionsService.postQuestion(this.askQuestionForm.value);
 
       this.submitted = false;
       this.askQuestionForm.markAsUntouched();
