@@ -1,11 +1,6 @@
 version: "3.8"
 
 services:
-  fake-backend:
-    build: ./backend
-    ports:
-      - "3000:3000"
-
   angular-frontend:
     build: ./frontend
     stdin_open: true
@@ -16,5 +11,3 @@ services:
     volumes:
       - /app/node_modules
       - ./frontend/detQA:/app
-    depends_on:
-      - fake-backend
