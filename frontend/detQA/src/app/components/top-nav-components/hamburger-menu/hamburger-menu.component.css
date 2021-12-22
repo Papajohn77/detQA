@@ -55,10 +55,6 @@
   background-color: var(--color-gray);
 }
 
-.small-screen {
-  display: none;
-}
-
 .animate-line-1 {
   transform: rotateZ(-405deg) translate(-8px, 6px);
 }
@@ -69,13 +65,4 @@
 
 .animate-line-3 {
   transform: rotateZ(405deg) translate(-8px, -6px);
-}
-
-/* ---------------- Media Queries ---------------- */
-
-/* Applies when the screen width is below 600px */
-@media screen and (max-width: 600px) {
-  .small-screen {
-    display: block;
-  }
 }
