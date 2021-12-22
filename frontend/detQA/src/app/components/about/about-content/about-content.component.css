@@ -1,0 +1,8 @@
+.about-section {
+  text-align: center;
+  padding: 3rem;
+}
+
+.styled-text {
+  color: var(--color-red);
+}

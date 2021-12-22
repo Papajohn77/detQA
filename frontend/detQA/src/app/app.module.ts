@@ -20,6 +20,9 @@ import { MainAskQuestionComponent } from './components/ask-question-components/m
 import { AskQuestionHeadingComponent } from './components/ask-question-components/ask-question-heading/ask-question-heading.component';
 import { AskQuestionFormComponent } from './components/ask-question-components/ask-question-form/ask-question-form.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { AboutHeadingComponent } from './components/about/about-heading/about-heading.component';
+import { MainAboutComponent } from './components/about/main-about/main-about.component';
+import { AboutContentComponent } from './components/about/about-content/about-content.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +39,9 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
     AskQuestionHeadingComponent,
     AskQuestionFormComponent,
     PageNotFoundComponent,
+    AboutHeadingComponent,
+    MainAboutComponent,
+    AboutContentComponent,
   ],
   imports: [
     BrowserModule,
