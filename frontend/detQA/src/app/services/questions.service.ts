@@ -18,8 +18,14 @@ export class QuestionsService {
 
   constructor(private http: HttpClient) {}
 
-  getQuestions(): Observable<Question[]> {
-    return this.http.get<Question[]>(this.questionsUrl);
+  getQuestions(page: number, searchTerm: string): Observable<Question[]> {
+    if (searchTerm) {
+      return this.http.get<Question[]>(
+        `${this.questionsUrl}?page=${page}&search=${searchTerm}`
+      );
+    } else {
+      return this.http.get<Question[]>(`${this.questionsUrl}?page=${page}`);
+    }
   }
 
   postQuestion(question: any): void {
