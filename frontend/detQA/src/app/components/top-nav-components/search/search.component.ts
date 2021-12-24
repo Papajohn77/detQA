@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { SearchService } from '../../../services/search.service';
+import { Suggestion } from '../../../models/Suggestion';
+import { SuggestionsService } from '../../../services/suggestions.service';
 
 @Component({
   selector: 'app-search',
@@ -9,17 +10,38 @@ import { SearchService } from '../../../services/search.service';
 })
 export class SearchComponent implements OnInit {
   searchTerm!: string;
+  fetchedSuggestions!: Suggestion[];
+  suggestions!: Suggestion[];
 
-  constructor(private router: Router, private searchService: SearchService) {}
+  constructor(
+    private router: Router,
+    private suggestionsService: SuggestionsService
+  ) {}
 
-  ngOnInit(): void {
-    this.searchService.searchTerm.subscribe((data: string) => {
-      this.searchTerm = data;
-    });
+  ngOnInit(): void {}
+
+  updateSuggestions() {
+    if (this.searchTerm.length < 2) {
+      this.fetchedSuggestions = [];
+      this.suggestions = this.fetchedSuggestions;
+    } else if (this.searchTerm.length === 2) {
+      this.suggestionsService
+        .getSuggestions(this.searchTerm)
+        .subscribe((suggestions) => {
+          this.fetchedSuggestions = suggestions;
+          this.suggestions = this.fetchedSuggestions;
+        });
+    } else {
+      this.suggestions = this.fetchedSuggestions.filter((suggestion) =>
+        suggestion.title.toLowerCase().startsWith(this.searchTerm.toLowerCase())
+      );
+    }
   }
 
-  setSearchTerm(searchTerm: string) {
-    this.searchService.setSearchTerm(searchTerm);
+  onSuggestionClick(title: string) {
+    this.searchTerm = title;
+    this.fetchedSuggestions = [];
+    this.suggestions = [];
   }
 
   onSubmit() {

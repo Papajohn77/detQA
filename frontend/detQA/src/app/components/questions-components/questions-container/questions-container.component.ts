@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { QuestionsService } from '../../../services/questions.service';
-import { SearchService } from '../../../services/search.service';
 import { Question } from '../../../models/Question';
 import { ActivatedRoute } from '@angular/router';
 
@@ -10,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./questions-container.component.css'],
 })
 export class QuestionsContainerComponent implements OnInit {
-  page = 1;
+  page!: number;
   questionsPerPage = 3;
 
   searchTerm!: string;
