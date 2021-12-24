@@ -1,10 +1,25 @@
-<div class="search">
-  <input
-    id="search-field"
-    type="search"
-    name="search"
-    placeholder="&#xF002; Search..."
-    [(ngModel)]="searchTerm"
-    (ngModelChange)="setSearchTerm($event)"
-  />
-</div>
+<form class="search" (submit)="onSubmit()">
+  <div id="search-bar">
+    <input
+      id="search-field"
+      type="search"
+      name="search"
+      placeholder="Search..."
+      autocomplete="off"
+      [(ngModel)]="searchTerm"
+      (ngModelChange)="updateSuggestions()"
+    />
+    <div id="suggestions-container">
+      <div
+        class="suggestion"
+        *ngFor="let suggestion of suggestions"
+        (click)="onSuggestionClick(suggestion.title)"
+      >
+        {{ suggestion.title }}
+      </div>
+    </div>
+  </div>
+  <button id="search-btn" class="btn btn-warning" type="submit">
+    <i class="fas fa-search"></i>
+  </button>
+</form>

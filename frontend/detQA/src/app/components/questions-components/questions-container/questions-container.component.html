@@ -5,27 +5,17 @@
   >
     No questions found!
   </div>
-  <app-question
-    *ngFor="
-      let question of questions
-        | filter: searchTerm
-        | paginate
-          : {
-              itemsPerPage: questionsPerPage,
-              currentPage: page
-            }
-    "
-    [question]="question"
-  ></app-question>
+  <ng-container *ngFor="let question of questions; index as i">
+    <app-question
+      *ngIf="i < questionsPerPage"
+      [question]="question"
+    ></app-question>
+  </ng-container>
 </section>
 
-<app-questions-pagination>
-  <pagination-controls
-    class="pagination-controls"
-    previousLabel="Prev"
-    nextLabel="Next"
-    (pageChange)="pageChange($event)"
-    *ngIf="questions !== undefined && questions.length !== 0"
-  >
-  </pagination-controls>
+<app-questions-pagination
+  [page]="page"
+  [hasNext]="questions.length === questionsPerPage + 1"
+>
+  <!--*ngIf="questions !== undefined && questions.length !== 0"-->
 </app-questions-pagination>
