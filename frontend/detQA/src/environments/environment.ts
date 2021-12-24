@@ -2,7 +2,7 @@
 
 export const environment = {
   production: false,
-  baseUrl: 'http://localhost:8080/appname',
+  baseUrl: 'http://ism.dmst.aueb.gr/ismgroup18/api',
 };
 
 export enum Endpoint {

@@ -1,5 +1,18 @@
 <section id="pagination">
-  <div id="button_container">
-    <ng-content></ng-content>
+  <div class="button_container" *ngIf="page === 1; else elseBlock">
+    <div></div>
+    <a class="btn btn-warning" *ngIf="hasNext" (click)="nextPage()">
+      Page {{ page + 1 }} <i class="fas fa-arrow-right"></i>
+    </a>
   </div>
+  <ng-template #elseBlock>
+    <div class="button_container">
+      <a class="btn btn-warning" (click)="prevPage()">
+        <i class="fas fa-arrow-left"></i> Page {{ page - 1 }}
+      </a>
+      <a class="btn btn-warning" *ngIf="hasNext" (click)="nextPage()">
+        Page {{ page + 1 }} <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+  </ng-template>
 </section>
