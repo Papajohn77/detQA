@@ -4,22 +4,8 @@
   top: 0;
 
   display: flex;
-  align-items: center;
+  justify-content: space-between;
   padding: 0.5rem 1rem;
 
   background-color: var(--color-red);
-}
-
-.left-side {
-  display: flex;
-}
-
-/* ---------------- Media Queries ---------------- */
-
-/* Applies when the screen width is below 600px */
-@media screen and (max-width: 600px) {
-  .left-side {
-    width: 100%;
-    justify-content: space-between;
-  }
 }

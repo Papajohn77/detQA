@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
-  baseUrl: 'http://localhost:8080/appname/api/optional',
+  baseUrl: 'http://localhost:8080/detQA/api',
 };
 
 export enum Endpoint {

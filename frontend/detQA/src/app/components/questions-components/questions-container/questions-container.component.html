@@ -16,6 +16,6 @@
 <app-questions-pagination
   [page]="page"
   [hasNext]="questions.length === questionsPerPage + 1"
+  *ngIf="questions !== undefined && questions.length !== 0"
 >
-  <!--*ngIf="questions !== undefined && questions.length !== 0"-->
 </app-questions-pagination>

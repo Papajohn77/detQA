@@ -109,6 +109,20 @@ option {
   margin-bottom: 1rem;
 }
 
+.failure-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 15px;
+  padding: 0.5rem;
+  color: #721c24;
+  background-color: #f8d7da;
+  border-radius: 4px;
+
+  margin-bottom: 1rem;
+}
+
 .error-message {
   font-size: 15px;
   padding-left: 12px;

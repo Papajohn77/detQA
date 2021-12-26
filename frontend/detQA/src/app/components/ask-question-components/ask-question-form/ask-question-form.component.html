@@ -7,13 +7,15 @@
     <div *ngIf="successMessage" class="success-message">
       {{ successMessage }}
     </div>
+    <div *ngIf="failureMessage" class="failure-message">
+      {{ failureMessage }}
+    </div>
 
     <div class="form-group">
       <label id="title_label" for="title">Title:</label>
       <input
-        type="text"
         id="title"
-        name="title"
+        type="text"
         placeholder="Insert the title of your question"
         formControlName="title"
         required
@@ -52,7 +54,6 @@
       <label id="body_label" for="question-body">Body:</label>
       <textarea
         id="question-body"
-        name="name"
         rows="10"
         cols="130"
         placeholder="Enter details here..."
@@ -82,7 +83,7 @@
 
     <div class="form-group">
       <label id="category_label" for="category">Category:</label>
-      <select id="category" name="category" formControlName="category" required>
+      <select id="category" formControlName="category" required>
         <option value="" disabled selected>
           --Please choose the category of your question--
         </option>

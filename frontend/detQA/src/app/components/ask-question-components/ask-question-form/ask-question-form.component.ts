@@ -12,6 +12,7 @@ import { Category } from '../../../models/Category';
 export class AskQuestionFormComponent implements OnInit {
   submitted = false;
   successMessage = '';
+  failureMessage = '';
 
   categories!: Category[];
   askQuestionForm!: FormGroup;
@@ -46,14 +47,23 @@ export class AskQuestionFormComponent implements OnInit {
   onSubmit() {
     this.submitted = true;
     this.successMessage = '';
+    this.failureMessage = '';
 
     if (this.askQuestionForm.valid) {
-      this.questionsService.postQuestion(this.askQuestionForm.value);
+      this.questionsService.postQuestion(this.askQuestionForm.value).subscribe({
+        next: () => {
+          this.successMessage =
+            'Your question has been successfully submitted!';
+        },
+        error: () => {
+          this.failureMessage =
+            'Your question submission failed! Please try again later';
+        },
+      });
 
       this.submitted = false;
       this.askQuestionForm.markAsUntouched();
       this.askQuestionForm.setValue({ title: '', body: '', category: '' });
-      this.successMessage = 'Your question has been successfully submitted!';
     }
   }
 }

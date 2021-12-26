@@ -5,9 +5,9 @@
 #search-bar {
   position: relative;
 
-  width: 50vw;
+  width: 40vw;
   min-width: 12rem;
-  max-width: 35rem;
+  max-width: 25rem;
 
   margin-left: 1.5rem;
 }

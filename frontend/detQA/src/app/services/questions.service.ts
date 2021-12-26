@@ -28,14 +28,9 @@ export class QuestionsService {
     }
   }
 
-  postQuestion(question: any): void {
-    this.http
+  postQuestion(question: any): Observable<any> {
+    return this.http
       .post(this.questionsUrl, question, this.httpOptions)
-      .pipe(retry(3))
-      .subscribe({
-        error: () => {
-          console.log('The POST request failed to complete!');
-        },
-      });
+      .pipe(retry(3));
   }
 }

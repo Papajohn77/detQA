@@ -53,5 +53,7 @@ export class SearchComponent implements OnInit {
     });
 
     this.searchTerm = '';
+    this.fetchedSuggestions = [];
+    this.suggestions = [];
   }
 }

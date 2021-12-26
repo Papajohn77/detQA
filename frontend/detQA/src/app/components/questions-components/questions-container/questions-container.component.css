@@ -8,10 +8,6 @@
   font-size: 18px;
 }
 
-.pagination-controls /deep/ .current {
-  background-color: var(--color-red);
-}
-
 /* ---------------- Media Queries ---------------- */
 
 /* Applies when the screen width is below 600px */
