@@ -1,4 +1,4 @@
-FROM node:lts-alpine
+FROM node:lts-alpine as build-stage
 
 WORKDIR /app
 
@@ -6,9 +6,16 @@ COPY detQA/package.json .
 
 RUN npm install
 
-RUN npm install -g @angular/cli
+COPY ./detQA .
 
-CMD ["ng", "serve", "--host", "0.0.0.0", "--poll"]
+RUN npm install -g @angular/cli@12.2.13
 
-# docker-compose up -d --build
-# docker-compose exec angular-frontend ng generate component xyz
+RUN ng build
+
+
+
+FROM nginx:stable-alpine
+
+COPY --from=build-stage /app/dist/detQA /usr/share/nginx/html
+
+COPY nginx/nginx.conf /etc/nginx/conf.d/default.conf
