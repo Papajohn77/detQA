@@ -49,7 +49,6 @@ export class SearchComponent implements OnInit {
     this.router.onSameUrlNavigation = 'reload';
     this.router.navigate(['/questions'], {
       queryParams: { search: this.searchTerm },
-      queryParamsHandling: 'merge',
     });
 
     this.searchTerm = '';
