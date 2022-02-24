@@ -5,8 +5,8 @@
     <div class="line line-3" [class.animate-line-3]="isAnimated"></div>
   </div>
   <nav class="hamburger-menu_content" [class.clicked]="isClicked">
-    <a href="questions">Questions</a>
-    <a href="ask-question">Ask Question</a>
-    <a href="about">About us</a>
+    <a routerLink="/questions" (click)="onClick()">Questions</a>
+    <a routerLink="/ask-question" (click)="onClick()">Ask Question</a>
+    <a routerLink="/about" (click)="onClick()">About us</a>
   </nav>
 </div>
