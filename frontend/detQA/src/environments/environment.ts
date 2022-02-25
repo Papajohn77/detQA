@@ -2,11 +2,14 @@
 
 export const environment = {
   production: false,
-  baseUrl: 'http://ism.dmst.aueb.gr/ismgroup18/api/optional',
+  baseUrl: 'http://localhost:8080/detQA/api',
 };
 
 export enum Endpoint {
   Questions = 'questions',
+  Question = 'question',
+  Answers = 'answers',
+  Answer = 'answer',
   Categories = 'categories',
   Suggestions = 'suggestions',
 }
