@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { AnswersService } from '../../../services/answers.service';
+import { AnswerService } from '../../../services/answer.service';
 import { Answer } from '../../../models/Answer';
 import { ActivatedRoute } from '@angular/router';
 

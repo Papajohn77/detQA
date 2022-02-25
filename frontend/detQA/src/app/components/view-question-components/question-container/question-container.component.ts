@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { QuestionsService } from '../../../services/questions.service';
+import { QuestionService } from '../../../services/question.service';
 import { Question } from '../../../models/Question';
 
 @Component({
@@ -12,10 +12,10 @@ export class QuestionContainerComponent implements OnInit {
 
   question!: Question;
 
-  constructor(private questionsService: QuestionsService) {}
+  constructor(private questionService: QuestionService) {}
 
   ngOnInit(): void {
-    this.questionsService
+    this.questionService
       .getQuestion(this.questionId)
       .subscribe(
         (receivedQuestion: Question) => (this.question = receivedQuestion)

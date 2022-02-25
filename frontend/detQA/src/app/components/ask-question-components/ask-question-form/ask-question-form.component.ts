@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { CategoriesService } from '../../../services/categories.service';
-import { QuestionsService } from '../../../services/questions.service';
+import { CategoryService } from '../../../services/category.service';
+import { QuestionService } from '../../../services/question.service';
 import { Category } from '../../../models/Category';
 
 @Component({
@@ -18,8 +18,8 @@ export class AskQuestionFormComponent implements OnInit {
   askQuestionForm!: FormGroup;
 
   constructor(
-    private categoriesService: CategoriesService,
-    private questionsService: QuestionsService
+    private categoryService: CategoryService,
+    private questionService: QuestionService
   ) {}
 
   ngOnInit(): void {
@@ -32,7 +32,7 @@ export class AskQuestionFormComponent implements OnInit {
       category: new FormControl('', Validators.required),
     });
 
-    this.categoriesService
+    this.categoryService
       .getCategories()
       .subscribe(
         (receivedCategories: Category[]) =>
@@ -50,7 +50,7 @@ export class AskQuestionFormComponent implements OnInit {
     this.failureMessage = '';
 
     if (this.askQuestionForm.valid) {
-      this.questionsService.postQuestion(this.askQuestionForm.value).subscribe({
+      this.questionService.postQuestion(this.askQuestionForm.value).subscribe({
         next: () => {
           this.successMessage =
             'Your question has been successfully submitted!';

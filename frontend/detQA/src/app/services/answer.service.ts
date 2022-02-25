@@ -8,7 +8,7 @@ import { environment, Endpoint } from '../../environments/environment';
 @Injectable({
   providedIn: 'root',
 })
-export class AnswersService {
+export class AnswerService {
   private answersUrl = `${environment.baseUrl}/${Endpoint.Answers}`;
 
   private answerUrl = `${environment.baseUrl}/${Endpoint.Answer}`;

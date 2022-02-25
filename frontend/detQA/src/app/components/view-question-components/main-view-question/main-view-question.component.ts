@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AnswersService } from '../../../services/answers.service';
+import { AnswerService } from '../../../services/answer.service';
 import { Answer } from '../../../models/Answer';
 import { ActivatedRoute } from '@angular/router';
 
@@ -14,14 +14,14 @@ export class MainViewQuestionComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private answersService: AnswersService
+    private answerService: AnswerService
   ) {}
 
   ngOnInit(): void {
     const routeParams = this.route.snapshot.paramMap;
     this.questionId = Number(routeParams.get('questionId'));
 
-    this.answersService
+    this.answerService
       .getAnswers(this.questionId)
       .subscribe(
         (receivedAnswers: Answer[]) => (this.answers = receivedAnswers)

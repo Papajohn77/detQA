@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Suggestion } from '../../../models/Suggestion';
-import { SuggestionsService } from '../../../services/suggestions.service';
+import { SuggestionService } from '../../../services/suggestion.service';
 
 @Component({
   selector: 'app-search',
@@ -15,7 +15,7 @@ export class SearchComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private suggestionsService: SuggestionsService
+    private suggestionService: SuggestionService
   ) {}
 
   ngOnInit(): void {}
@@ -25,7 +25,7 @@ export class SearchComponent implements OnInit {
       this.fetchedSuggestions = [];
       this.suggestions = this.fetchedSuggestions;
     } else if (this.searchTerm.length === 2) {
-      this.suggestionsService
+      this.suggestionService
         .getSuggestions(this.searchTerm)
         .subscribe((suggestions) => {
           this.fetchedSuggestions = suggestions;

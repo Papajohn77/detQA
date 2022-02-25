@@ -7,7 +7,7 @@ import { environment, Endpoint } from '../../environments/environment';
 @Injectable({
   providedIn: 'root',
 })
-export class SuggestionsService {
+export class SuggestionService {
   private suggestionsUrl = `${environment.baseUrl}/${Endpoint.Suggestions}`;
 
   constructor(private http: HttpClient) {}

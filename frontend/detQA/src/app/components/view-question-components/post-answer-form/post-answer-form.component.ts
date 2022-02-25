@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { formatDate } from '@angular/common';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { AnswersService } from '../../../services/answers.service';
+import { AnswerService } from '../../../services/answer.service';
 import { Answer } from '../../../models/Answer';
 
 @Component({
@@ -19,7 +19,7 @@ export class PostAnswerFormComponent implements OnInit {
 
   postAnswerForm!: FormGroup;
 
-  constructor(private answersService: AnswersService) {}
+  constructor(private answerService: AnswerService) {}
 
   ngOnInit(): void {
     this.postAnswerForm = new FormGroup({
@@ -40,7 +40,7 @@ export class PostAnswerFormComponent implements OnInit {
     if (this.postAnswerForm.valid) {
       const { body, question_id } = this.postAnswerForm.value;
 
-      this.answersService.postAnswer({ body, question_id }).subscribe({
+      this.answerService.postAnswer({ body, question_id }).subscribe({
         next: () => {
           this.successMessage = 'Your answer has been successfully submitted!';
 

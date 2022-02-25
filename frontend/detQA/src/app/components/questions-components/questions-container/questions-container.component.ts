@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { QuestionsService } from '../../../services/questions.service';
+import { QuestionService } from '../../../services/question.service';
 import { Question } from '../../../models/Question';
 import { ActivatedRoute } from '@angular/router';
 
@@ -17,7 +17,7 @@ export class QuestionsContainerComponent implements OnInit {
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private questionsService: QuestionsService
+    private questionService: QuestionService
   ) {}
 
   ngOnInit(): void {
@@ -26,7 +26,7 @@ export class QuestionsContainerComponent implements OnInit {
       this.searchTerm = params.search || '';
     });
 
-    this.questionsService
+    this.questionService
       .getQuestions(this.page, this.searchTerm)
       .subscribe(
         (receivedQuestions: Question[]) => (this.questions = receivedQuestions)
