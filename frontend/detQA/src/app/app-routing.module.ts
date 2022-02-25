@@ -7,6 +7,7 @@ import { MainAboutComponent } from './components/about/main-about/main-about.com
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 const routes: Routes = [
+  { path: '', component: MainQuestionsComponent },
   { path: 'questions', component: MainQuestionsComponent },
   { path: 'question/:questionId', component: MainViewQuestionComponent },
   { path: 'ask-question', component: MainAskQuestionComponent },
