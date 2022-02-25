@@ -1,18 +1,22 @@
-#questions-container {
+section h2 {
+  margin-top: 1rem;
+}
+
+#answers-container {
   padding: 1rem 2rem;
-  margin-bottom: 20px;
+  border-bottom: 1px solid rgb(77, 77, 77);
 }
 
 .info-message {
-  text-align: center;
   font-size: 24px;
+  margin: 1.2rem 0;
 }
 
 /* ---------------- Media Queries ---------------- */
 
 /* Applies when the screen width is below 600px */
 @media screen and (max-width: 600px) {
-  #questions-container {
+  #answers-container {
     padding: 1rem 1rem;
   }
 }

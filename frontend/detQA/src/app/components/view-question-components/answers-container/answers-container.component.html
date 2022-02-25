@@ -1,0 +1,15 @@
+<section id="answers-container">
+  <div
+    class="info-message"
+    *ngIf="answers === undefined || answers.length === 0; else elseBlock"
+  >
+    There are not any answers yet!
+  </div>
+  <ng-template #elseBlock>
+    <h2>Answers</h2>
+  </ng-template>
+
+  <ng-container *ngFor="let answer of answers">
+    <app-answer [answer]="answer"></app-answer>
+  </ng-container>
+</section>

@@ -3,6 +3,8 @@
   <p>{{ question.category.name }}</p>
   <p>{{ question.date_created }}</p>
   <div class="view-question_btn">
-    <a routerLink="#" class="btn btn-warning">View</a>
+    <a [routerLink]="['/question', question.id]" class="btn btn-warning">
+      View
+    </a>
   </div>
 </div>

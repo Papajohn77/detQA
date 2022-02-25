@@ -21,6 +21,12 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { MainAboutComponent } from './components/about/main-about/main-about.component';
 import { AboutHeadingComponent } from './components/about/about-heading/about-heading.component';
 import { AboutContentComponent } from './components/about/about-content/about-content.component';
+import { MainViewQuestionComponent } from './components/view-question-components/main-view-question/main-view-question.component';
+import { ViewQuestionHeadingComponent } from './components/view-question-components/view-question-heading/view-question-heading.component';
+import { QuestionContainerComponent } from './components/view-question-components/question-container/question-container.component';
+import { AnswersContainerComponent } from './components/view-question-components/answers-container/answers-container.component';
+import { AnswerComponent } from './components/view-question-components/answer/answer.component';
+import { PostAnswerFormComponent } from './components/view-question-components/post-answer-form/post-answer-form.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +46,12 @@ import { AboutContentComponent } from './components/about/about-content/about-co
     AboutHeadingComponent,
     MainAboutComponent,
     AboutContentComponent,
+    MainViewQuestionComponent,
+    ViewQuestionHeadingComponent,
+    QuestionContainerComponent,
+    AnswersContainerComponent,
+    AnswerComponent,
+    PostAnswerFormComponent,
   ],
   imports: [
     BrowserModule,

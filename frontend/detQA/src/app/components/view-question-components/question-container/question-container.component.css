@@ -1,0 +1,39 @@
+section h2 {
+  margin-top: 1rem;
+}
+
+#question-container {
+  padding: 1rem 2rem;
+  border-bottom: 1px solid rgb(77, 77, 77);
+}
+
+.question {
+  padding: 1.5rem;
+  margin: 2rem 0;
+  background-color: var(--color-white);
+  border-radius: 8px;
+  border: 2px solid var(--color-red);
+}
+
+.question-body {
+  font-size: 16px !important;
+  margin: 25px 0 !important;
+}
+
+.question p {
+  font-size: 14px;
+  margin: 15px 0;
+}
+
+/* ---------------- Media Queries ---------------- */
+
+/* Applies when the screen width is below 600px */
+@media screen and (max-width: 600px) {
+  #question-container {
+    padding: 1rem 1rem;
+  }
+
+  .question {
+    padding: 1rem;
+  }
+}

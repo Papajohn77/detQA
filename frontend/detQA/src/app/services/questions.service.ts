@@ -10,6 +10,8 @@ import { environment, Endpoint } from '../../environments/environment';
 })
 export class QuestionsService {
   private questionsUrl = `${environment.baseUrl}/${Endpoint.Questions}`;
+
+  private questionUrl = `${environment.baseUrl}/${Endpoint.Question}`;
   private httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
@@ -28,9 +30,13 @@ export class QuestionsService {
     }
   }
 
+  getQuestion(id: number): Observable<Question> {
+    return this.http.get<Question>(`${this.questionUrl}?id=${id}`);
+  }
+
   postQuestion(question: any): Observable<any> {
     return this.http
-      .post(this.questionsUrl, question, this.httpOptions)
+      .post(this.questionUrl, question, this.httpOptions)
       .pipe(retry(3));
   }
 }

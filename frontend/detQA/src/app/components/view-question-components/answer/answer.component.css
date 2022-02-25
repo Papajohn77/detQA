@@ -1,0 +1,25 @@
+.answer {
+  padding: 1.5rem 1.5rem 0.75rem 1rem;
+  margin: 1rem 0;
+  background-color: var(--color-white);
+  border-radius: 8px;
+  border: 2px solid var(--color-red);
+}
+
+.answer-body {
+  font-size: 16px !important;
+  margin-bottom: 20px !important;
+}
+
+.answer p {
+  font-size: 14px;
+}
+
+/* ---------------- Media Queries ---------------- */
+
+/* Applies when the screen width is below 600px */
+@media screen and (max-width: 600px) {
+  .answer {
+    padding: 1rem;
+  }
+}

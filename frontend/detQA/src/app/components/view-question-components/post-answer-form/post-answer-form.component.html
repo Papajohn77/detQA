@@ -1,0 +1,46 @@
+<section id="post-answer">
+  <h2>Post Answer</h2>
+
+  <form [formGroup]="postAnswerForm" (ngSubmit)="onSubmit()">
+    <div *ngIf="successMessage" class="success-message">
+      {{ successMessage }}
+    </div>
+    <div *ngIf="failureMessage" class="failure-message">
+      {{ failureMessage }}
+    </div>
+
+    <div class="form-group">
+      <textarea
+        id="answer-body"
+        name="body"
+        rows="10"
+        cols="130"
+        placeholder="Answer here..."
+        formControlName="body"
+        required
+      ></textarea>
+      <span
+        class="error-message"
+        *ngIf="
+          (postAnswerFormControl.body.touched || submitted) &&
+          postAnswerFormControl.body.errors?.required
+        "
+      >
+        The answer body is required...
+      </span>
+      <span
+        class="error-message"
+        *ngIf="
+          (postAnswerFormControl.body.touched || submitted) &&
+          postAnswerFormControl.body.errors?.minlength
+        "
+      >
+        The answer body must be at least 15 characters long...
+      </span>
+    </div>
+
+    <div class="submit-answer_btn">
+      <button id="submit-btn" class="btn btn-warning">Submit</button>
+    </div>
+  </form>
+</section>

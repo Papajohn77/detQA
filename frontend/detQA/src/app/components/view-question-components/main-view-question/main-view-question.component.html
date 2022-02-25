@@ -1,0 +1,9 @@
+<main>
+  <app-view-question-heading></app-view-question-heading>
+  <app-question-container [questionId]="questionId"></app-question-container>
+  <app-answers-container [answers]="answers"></app-answers-container>
+  <app-post-answer-form
+    [answers]="answers"
+    [questionId]="questionId"
+  ></app-post-answer-form>
+</main>
