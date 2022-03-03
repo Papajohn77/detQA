@@ -10,9 +10,10 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class QuestionsContainerComponent implements OnInit {
   page!: number;
+  searchTerm!: string;
   questionsPerPage = 3;
 
-  searchTerm!: string;
+  loading = true;
   questions!: Question[];
 
   constructor(
@@ -28,8 +29,9 @@ export class QuestionsContainerComponent implements OnInit {
 
     this.questionService
       .getQuestions(this.page, this.searchTerm)
-      .subscribe(
-        (receivedQuestions: Question[]) => (this.questions = receivedQuestions)
-      );
+      .subscribe((receivedQuestions: Question[]) => {
+        this.loading = false;
+        this.questions = receivedQuestions;
+      });
   }
 }

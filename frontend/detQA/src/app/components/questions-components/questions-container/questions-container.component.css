@@ -8,6 +8,24 @@
   font-size: 24px;
 }
 
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 1rem;
+}
+
+.spinner {
+  display: flex;
+
+  gap: 1.5rem;
+}
+
+.spinner-message {
+  font-size: 24px;
+}
+
 /* ---------------- Media Queries ---------------- */
 
 /* Applies when the screen width is below 600px */
