@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
-  baseUrl: 'http://localhost:8080/detQA/api',
+  baseUrl: 'https://detqa-api.johnpapadatos.tech/detQA/api',
 };
 
 export enum Endpoint {
